@@ -45,8 +45,6 @@ namespace C7
             myAdapter.IsCurrentlyOn = true;
             myAdapter.Login("stareHaslo7");
             StartWiFiCommand testCommand = new StartWiFiCommand(myAdapter, "stareHaslo7");
-            
-
         }
     }
 }

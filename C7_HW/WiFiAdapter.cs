@@ -4,14 +4,21 @@ using System.Text;
 
 namespace C7
 {    
-    class WiFiAdapter : WiFi
+    class WiFiAdapter : WiFi2
     {
-        protected WiFi2 wiFi2; 
-        public WiFiAdapter(WiFi2 wiFi2, string net)
+        private WiFi wiFi;
+
+        public WiFiAdapter(WiFi2 wiFi2, string network) : base(wiFi2, network)
         {
-            this.wiFi2 = wiFi2;
-            this.network = net;
-            this.password = wiFi2.PasswordGettter();
+
+        }
+
+        public void Login(string pwd)
+        {
+            this.password = pwd;
+            wiFi = new WiFi(network, pwd);
+            wiFi.IsCurrentlyOn = true;
+            wiFi.Login(pwd);            
         }
     }
 }

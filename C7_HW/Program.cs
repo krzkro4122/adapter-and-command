@@ -42,9 +42,10 @@ namespace C7
             WiFi2 oldRouter = new WiFi2("stareHaslo7"); // stary router nie potrafi ustawic stalej nazwy sieci
             WiFiAdapter myAdapter = new WiFiAdapter(oldRouter, "routerXYZ"); // ale nasz adapter bedzie potrafil
             // gotowego adaptera mozna uzywac jak standardowego routera typu WiFi
-            myAdapter.IsCurrentlyOn = true;
+            // myAdapter.IsCurrentlyOn = true;
             myAdapter.Login("stareHaslo7");
             StartWiFiCommand testCommand = new StartWiFiCommand(myAdapter, "stareHaslo7");
+            SmartHomeScheduler controller = new SmartHomeScheduler();
         }
     }
 }

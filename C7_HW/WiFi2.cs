@@ -6,7 +6,7 @@ namespace C7
 {
     class WiFi2
     {
-        protected string password;
+        protected string password, network;
         protected bool isCurrentlyOn;
         public virtual bool IsCurrentlyOn
         {
@@ -30,13 +30,14 @@ namespace C7
                 Console.WriteLine("\nLogin successful!");
             }
         }
-        public string PasswordGettter()
-        {
-            return this.password;
-        }
         public WiFi2(string pwd)
         {
             password = pwd;
+            isCurrentlyOn = false;
+        }
+        public WiFi2( WiFi2 wiFi2, string network)
+        {
+            this.network = network;
             isCurrentlyOn = false;
         }
     }
